@@ -1,0 +1,23 @@
+#divContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+}
+.country{
+    box-shadow: 1px 1px 7px gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 300px;
+}
+.CountryName{
+    font-size: 20px;
+    color: cornflowerblue;
+    
+}
+.flag{
+    width: 290px;
+    border: solid 2px gray;
+    padding: 5px;
+}

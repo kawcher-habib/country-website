@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Country Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="divContainer"> 
+            
+        </div>
+    <script>
+        // let countrysDiv = document.getElementById('divContainer');
+        
+
+        // fetch('https://restcountries.eu/rest/v2/all')
+        // .then(res => res.json())
+        // .then(data => {
+        //     for(let i=0; i<img data.length; i++){
+        //         const element = data[i];
+        //         let countryDiv = document.createElement('div');
+        //         countryDiv.classList.add('country');
+
+        //                 // let h2 = document.createElement('h2');
+        //                 // h2.innerText = element.name;
+        //                 // let p = document.createElement('p');
+        //                 // p.innerText = element.capital;
+        //                 // countrysDiv.appendChild(h2);
+        //                 // countrysDiv.appendChild(p);
+
+        //                 let countryInfo = `
+        //                     <h2 class='CountryName'>${element.name}</h2>
+        //                     <p>${element.capital}</p>
+        //                 `
+        //                 countryDiv.innerHTML = countryInfo;
+        //                countrysDiv.appendChild(countryDiv)
+              
+        //     }
+        // });
+
+
+        let countrysDiv = document.getElementById('divContainer');
+        
+
+        fetch('https://restcountries.eu/rest/v2/all')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(element => {
+                let countryDiv = document.createElement('div');
+                countryDiv.classList.add('country');
+
+                        
+
+                        let countryInfo = `
+                            <h2 class='CountryName'>Country: ${element.name}</h2>
+                            <h5>Capital: ${element.capital}</h5>
+                            <h6>Region: ${element.region}</h6>
+                            <h6>TopLevelDomain: ${element.topLevelDomain}</h6>
+                            <h6>Population: ${element.population}</h6>
+                            <img class='flag' src="${element.flag}">
+                            
+                            
+                        `
+                        countryDiv.innerHTML = countryInfo;
+                       countrysDiv.appendChild(countryDiv)
+              
+                
+            });
+        });
+       
+
+       
+    </script>
+</body>
+</html>
